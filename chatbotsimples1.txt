@@ -1,0 +1,22 @@
+import os
+
+def resposta():
+    return input(f'Como posso te ajudar hoje?{os.linesep}[1]Qual o valor do produto?{os.linesep}[2]Como posso utilizar o produto no meu dia a dia?{os.linesep}')
+
+def processar_resposta(resposta, nome):
+    if resposta == '1':
+        print(f'{os.linesep}{nome}, nossos valores de produto são avaliados de acordo com a necessidade do cliente, temos pacotes de R$1 a R$2!')
+    elif resposta == '2':
+        print(f'{os.linesep}{nome}, nosso produto é versátil e além de aumentar suas vendas torna sua empresa conhecida e engajada na causa!')
+    else:
+        print('Digite apenas 1 ou 2 para iniciar seu atendimento.')
+
+def start():
+    print('Olá, bem vindo a loja X!')
+    nome = input('Digite seu nome: ')
+    while True:
+        resposta_usuario = resposta()
+        processar_resposta(resposta_usuario, nome)
+
+if __name__ == '__main__':
+    start()
